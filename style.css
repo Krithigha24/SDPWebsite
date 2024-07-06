@@ -336,8 +336,8 @@ This is important for placing pseudo-elements like ::after correctly.*/
 .saree_wrapper { 
     display: flex;
     justify-content: center;
-    
     position: relative; 
+    padding: 0px 100px;
 } 
 
 .saree_wrapper i { 
@@ -350,24 +350,24 @@ This is important for placing pseudo-elements like ::after correctly.*/
     cursor: pointer; 
     position: absolute; 
     top: 50%; 
-    font-size: 1.25 rem; 
+    font-size: 1.25rem; 
     transform: translateY(-50%); 
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23); 
 } 
 
 .saree_wrapper i:first-child { 
-    left: -22px; 
+    left: 100px; 
 } 
   
 .saree_wrapper i:last-child { 
-    right: -22px; 
+    right: 100px; 
 } 
 
 .saree_wrapper .saree_carousel { 
     display: grid; 
     grid-auto-flow: column; 
-    grid-auto-columns: calc((100% / 4) - 12px); 
-    gap: 16px; 
+    grid-auto-columns: calc((100% / 4) - 8px); 
+    gap: 8px;
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
     scroll-behavior: smooth; 
@@ -384,30 +384,14 @@ This is important for placing pseudo-elements like ::after correctly.*/
     justify-content: center; 
 } 
   
-.saree_carousel.dragging { 
-    scroll-snap-type: none; 
-    scroll-behavior: auto; 
-} 
-  
-.saree_carousel.no-transition { 
-    scroll-behavior: auto; 
-} 
-
-.saree_carousel.dragging .saree { 
-    cursor: grab; 
-    user-select: none; 
-} 
-  
 .saree_carousel .saree { 
     scroll-snap-align: start; 
-    height: 500px; 
+    height: 450px; 
     list-style: none; 
     background: #fff; 
     border-radius: 8px; 
     display: flex; 
     cursor: pointer; 
-    width: 98%; 
-    padding-bottom: 15px; 
     align-items: center; 
     justify-content: center; 
     flex-direction: column; 
@@ -417,25 +401,5 @@ This is important for placing pseudo-elements like ::after correctly.*/
     width: 250px; 
     height: 400px; 
     border-radius: 15px;
-    margin: 10px 100px 10px 100px; 
-} 
-
-.saree span { 
-    color: #6a6d78; 
-    font-size: 1.31rem; 
-} 
-  
-@media screen and (max-width: 900px) { 
-    .saree_wrapper .saree_carousel { 
-        grid-auto-columns: calc((100% / 2) - 9px); 
-  
-    } 
-} 
-  
-@media screen and (max-width: 600px) { 
-    .saree_wrapper .saree_carousel { 
-        grid-auto-columns: 100%; 
-  
-    } 
 }
 /*************************************************************************************************************************/
