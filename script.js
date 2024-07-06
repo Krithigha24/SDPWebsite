@@ -53,24 +53,42 @@ document.addEventListener("DOMContentLoaded", function() {
     const firstCard = carousel.querySelector(".saree");
     const firstCardWidth = firstCard.offsetWidth;
 
+    let scrollInterval = setInterval(scrollRight, 6000);
+
+    wrapper.addEventListener("mouseenter", () => {
+        clearInterval(scrollInterval); // Disable the timer
+    });
+
+    wrapper.addEventListener("mouseleave", () => {
+        scrollInterval = setInterval(scrollRight, 9000); // Re-enable the timer
+    });
+
     // Add event listeners for the arrow buttons to scroll the carousel left and right
     arrowBtns.forEach(btn => {
         btn.addEventListener("click", () => {
             if (btn.id === "carousel_prev") {
-                if (carousel.scrollLeft === 0) { // Left click when at the start of scrollbar
-                    carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
-                } else {
-                    carousel.scrollLeft -= firstCardWidth;
-                }
+                scrollLeft();
             } else {
-                if (carousel.scrollLeft >= carousel.scrollWidth - carousel.offsetWidth) {
-                    carousel.scrollLeft = 0;// Scroll to the beginning
-                } else {
-                    carousel.scrollLeft += firstCardWidth;// Scroll right
-                }
+                scrollRight();
             }
         });
     });
+
+    function scrollLeft(){
+        if (carousel.scrollLeft === 0) { // Left click when at the start of scrollbar
+            carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
+        } else {
+            carousel.scrollLeft -= firstCardWidth;
+        }
+    }
+
+    function scrollRight(){
+        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.offsetWidth) {
+            carousel.scrollLeft = 0;// Scroll to the beginning
+        } else {
+            carousel.scrollLeft += firstCardWidth;// Scroll right
+        }
+    }
 });
 /*********************************************************************************************************************************************/
 
