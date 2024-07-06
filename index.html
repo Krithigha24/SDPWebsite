@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SG Drape Project</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.png">
+</head>
+
+<body>
+    <section id="header">
+        <img src="Images/logo.png" alt="Img Error">
+        <div>
+            <div id="navbar_top">
+                <div id="navbar_search">
+                    <form action="/search" method="get">
+                        <input type="text" id="searchbar" name="q" placeholder="Search our store...">
+                    </form>
+                    <button type="submit" form="searchform"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+                <ul id="userAndCart">
+                    <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    <li style="position: relative;">
+                        <a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <asp:Label ID="lblCartCount" runat="server" CssClass="badge badge-warning"/>0</a> 
+                    </li>
+                </ul> 
+            </div>
+            <ul id="navbar_bottom">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="sale.html">Sale</a></li>
+                <li><a href="saree.html">Saree</a></li>
+                <li><a href="blouse.html">Stitched Blouse</a></li>
+                <li><a href="inskirt.html">Inskirt</a></li>
+                <li><a href="accessory.html">Accessories</a></li>
+                <li><a href="rental.html">Curated Rental</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div id="popup-box">
+        <a href="#"><img src="Images/Logo.png" class="smallLogo" alt="Small Logo"></a>
+        <ul id="popup-navbar_bottom">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="sale.html">Sale</a></li>
+            <li><a href="saree.html">Saree</a></li>
+            <li><a href="blouse.html">Stitched Blouse</a></li>
+            <li><a href="inskirt.html">Inskirt</a></li>
+            <li><a href="accessory.html">Accessories</a></li>
+            <li><a href="rental.html">Curated Rental</a></li>
+        </ul>
+    </div>
+
+    <section id="hero_slider">
+        <div class="hero_slide active">
+            <h2>Drape your story</h2>
+            <h4>of</h4>
+            <h1>Elegance</h1>
+            <p>Pretty Indian Sarees at Unbeatable Prices!</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="hero_slide">
+            <h2>New Arrivals</h2>
+            <h4>of</h4>
+            <h1>Grace</h1>
+            <p>Explore our latest collection!</p>
+            <button>Discover Now</button>
+        </div>
+        <div class="hero_slide">
+            <h2>Exclusive Collection</h2>
+            <h4>of</h4>
+            <h1>Style</h1>
+            <p>Handpicked sarees just for you!</p>
+            <button>View Collection</button>
+        </div>
+        <div class="hero_navigation">
+            <button class="hero_prev">&#10094;</button>
+            <button class="hero_next">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="Images/contactUs.png" alt="" class="featureSize">
+            <h6>Contact Us</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Images/aboutUs.png" alt="" class="featureSize">
+            <h6>SDP Founders</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Images/socials.png" alt="" class="featureSize">
+            <h6>Follow Us</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Images/localShip.png" alt="" class="featureSize">
+            <h6>SG Local Shipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Images/payment.png" alt="" class="featureSize">
+            <h6>Secure Checkout</h6>
+        </div>
+        <div class="fe-box">
+            <img src="Images/review.png" alt="" class="featureSize">
+            <h6>Customer Gallery</h6>
+        </div>
+    </section>
+
+    <section id="saree" class="section-p1">
+        <h2>Saree New Arrivals</h2>
+        <p>Pretty Sarees, Just a Click Away</p>
+        
+        <div class="carousel-container">
+            <button id="prevBtn">‹</button>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="Images/saree1.jpg" alt="Saree 1" class="sareeImage">
+                    <img src="Images/saree2.jpg" alt="Saree 2" class="sareeImage">
+                    <img src="Images/saree3.jpg" alt="Saree 3" class="sareeImage">
+                    <img src="Images/saree4.jpg" alt="Saree 4" class="sareeImage">
+                    <img src="Images/saree5.jpg" alt="Saree 5" class="sareeImage">
+                    <img src="Images/saree6.jpg" alt="Saree 6" class="sareeImage">
+                    <img src="Images/saree7.jpg" alt="Saree 7" class="sareeImage">
+                    <img src="Images/saree8.jpg" alt="Saree 8" class="sareeImage">
+                </div>
+            </div>
+            <button id="nextBtn">›</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
