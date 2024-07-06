@@ -333,73 +333,73 @@ This is important for placing pseudo-elements like ::after correctly.*/
 
 
 /**********************************************SAREE NEW ARRIVALS******************************************************************/
-.saree_wrapper { 
+.saree_wrapper {
     display: flex;
     justify-content: center;
-    position: relative; 
+    position: relative;
     padding: 0px 100px;
-} 
+}
 
-.saree_wrapper i { 
-    height: 50px; 
-    width: 50px; 
-    background: rgb(242, 204, 240); 
-    text-align: center; 
-    line-height: 50px; 
-    border-radius: 50%; 
-    cursor: pointer; 
-    position: absolute; 
-    top: 50%; 
-    font-size: 1.25rem; 
-    transform: translateY(-50%); 
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23); 
-} 
+.saree_wrapper i {
+    height: 50px;
+    width: 50px;
+    background: rgb(242, 204, 240);
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    opacity: 0; /* Initially hide */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
 
-.saree_wrapper i:first-child { 
-    left: 100px; 
-} 
-  
-.saree_wrapper i:last-child { 
-    right: 100px; 
-} 
+.saree_wrapper:hover i {
+    opacity: 1; /* Show on hover */
+}
 
-.saree_wrapper .saree_carousel { 
-    display: grid; 
-    grid-auto-flow: column; 
-    grid-auto-columns: calc((100% / 4) - 8px); 
+.saree_wrapper i:first-child {
+    left: 100px;
+}
+
+.saree_wrapper i:last-child {
+    right: 100px;
+}
+
+.saree_carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 4) - 8px);
     gap: 8px;
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
-    scroll-behavior: smooth; 
-    scrollbar-width: 0; 
-} 
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
 
-.saree_carousel::-webkit-scrollbar { 
-    display: none; 
-} 
-  
-.saree_carousel :where(.saree, .img) { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-} 
-  
-.saree_carousel .saree { 
-    scroll-snap-align: start; 
-    height: 450px; 
-    list-style: none; 
-    background: #fff; 
-    border-radius: 8px; 
-    display: flex; 
-    cursor: pointer; 
-    align-items: center; 
-    justify-content: center; 
-    flex-direction: column; 
-} 
-  
-.saree .img img { 
-    width: 250px; 
-    height: 400px; 
+.saree_carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.saree_carousel .saree {
+    scroll-snap-align: start;
+    height: 450px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.saree .img img {
+    width: 250px;
+    height: 400px;
     border-radius: 15px;
 }
 /*************************************************************************************************************************/

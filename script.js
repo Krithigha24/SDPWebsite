@@ -45,68 +45,33 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlide(currentIndex);
 });
 /*****************************************************************NEW ARRIVAL SAREE CAROUSEL************************************************************************ */
-document.addEventListener("DOMContentLoaded", function() { 
-    const carousel = document.querySelector(".saree_carousel"); 
-    const arrowBtns = document.querySelectorAll(".saree_wrapper i"); 
-    const wrapper = document.querySelector(".saree_wrapper"); 
+document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector(".saree_carousel");
+    const arrowBtns = document.querySelectorAll(".saree_wrapper i");
+    const wrapper = document.querySelector(".saree_wrapper");
 
-    const firstCard = carousel.querySelector(".saree"); 
-    const firstCardWidth = firstCard.offsetWidth; 
+    const firstCard = carousel.querySelector(".saree");
+    const firstCardWidth = firstCard.offsetWidth;
 
-    let timeoutId; 
-
-    const autoPlay = () => { 
-        // Return if window is smaller than 800 
-        if (window.innerWidth < 800) return; 
-        
-        // Calculate the total width of all cards 
-        const totalCardWidth = carousel.scrollWidth; 
-        
-        // Calculate the maximum scroll position 
-        const maxScrollLeft = totalCardWidth - carousel.offsetWidth; 
-        
-        // If the carousel is at the end, stop autoplay 
-        if (carousel.scrollLeft >= maxScrollLeft) return; 
-        
-        // Autoplay the carousel after every 2500ms 
-        timeoutId = setTimeout(() => {
-            if (carousel.scrollLeft >= maxScrollLeft) {
-                carousel.scrollLeft = 0;
-            } else {
-                carousel.scrollLeft += firstCardWidth;
-            }
-        }, 2500); 
-    }; 
-
-    wrapper.addEventListener("mouseenter", () => 
-        clearTimeout(timeoutId)); 
-    wrapper.addEventListener("mouseleave", autoPlay); 
-
-    // Add event listeners for the arrow buttons to 
-    // scroll the carousel left and right 
-    arrowBtns.forEach(btn => { 
-        btn.addEventListener("click", () => { 
+    // Add event listeners for the arrow buttons to scroll the carousel left and right
+    arrowBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
             if (btn.id === "carousel_prev") {
-                if (carousel.scrollLeft === 0) {
+                if (carousel.scrollLeft === 0) { // Left click when at the start of scrollbar
                     carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
                 } else {
                     carousel.scrollLeft -= firstCardWidth;
                 }
             } else {
                 if (carousel.scrollLeft >= carousel.scrollWidth - carousel.offsetWidth) {
-                    carousel.scrollLeft = 0;
+                    carousel.scrollLeft = 0;// Scroll to the beginning
                 } else {
-                    carousel.scrollLeft += firstCardWidth;
+                    carousel.scrollLeft += firstCardWidth;// Scroll right
                 }
             }
-        }); 
-    }); 
-
-    // Start autoplay when the document is loaded
-    autoPlay();
-}); 
-
-
+        });
+    });
+});
 /*********************************************************************************************************************************************/
 
 
